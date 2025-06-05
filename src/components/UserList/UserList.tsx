@@ -1,6 +1,7 @@
+"use client";
 import { ReactElement } from "react";
-import MainText from "@/components/MainText/MainText";
-import UserList from "../UserList/UserList";
+import UserCard from "./components/UserCard";
+import styles from "./UserList.module.scss";
 
 interface User {
   id: number;
@@ -30,12 +31,17 @@ interface Props {
   users: User[];
 }
 
-const Home = ({ users }: Props): ReactElement => (
-  <>
-    {" "}
-    <MainText />
-    <UserList users={users} />
-  </>
-);
+const UserList = ({ users }: Props): ReactElement => {
+  return (
+    <div>
+      <h2 className={styles.title}>Users</h2>
+      <div className={styles.card}>
+        {users.map((user) => (
+          <UserCard key={user.id} user={user} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default Home;
+export default UserList;

@@ -1,0 +1,59 @@
+/* CARD */
+.card {
+  @apply bg-white p-5 rounded-xl transition-transform duration-300 ease-in-out  transform;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d7d7d7;
+}
+.card * {
+  @apply text-gray;
+}
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+/* CARD NAME */
+.name {
+  @apply text-xl font-semibold mb-2 text-black;
+}
+
+.label {
+  @apply pr-10 text-gray-light-1;
+}
+
+/* SECTION PART */
+.section {
+  @apply mt-2 mb-4;
+}
+
+.sectionTitle {
+  @apply font-medium  mt-1 mb-1;
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+}
+.sectionTitle h5 {
+  @apply text-lg font-bold mb-2 text-black;
+}
+.sectionTitle a {
+  text-align: right;
+}
+
+.text_section {
+  @apply text-sm;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+}
+.text_section p {
+  line-height: 0.5rem;
+}
+
+.link {
+  @apply text-sm font-normal ml-2 text-blue no-underline;
+}
+
+.button {
+  @apply mt-4 px-4 py-2 w-full text-center font-bold text-blue no-underline border rounded-md transition inline-block;
+}
+
+.button:hover {
+  background-color: #ccdcec;
+}
