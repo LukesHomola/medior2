@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
-import Home from "@/components/Home/Home";
-import publicRuntimeConfig from "@/utils/config";
+import { ReactElement } from 'react';
+import Home from '@/components/Home/Home';
+import publicRuntimeConfig from '@/utils/config';
 const { usersUrl } = publicRuntimeConfig;
 
-interface User {
+interface IUser {
   id: number;
   name: string;
   username: string;
@@ -27,16 +27,23 @@ interface User {
   };
 }
 
-async function getUsers() {
-  const res = await fetch(usersUrl, { cache: "no-store" });
-  if (!res.ok) throw new Error("Faled to fetch users");
+async function getUsers(): Promise<IUser[]> {
+  const res = await fetch(usersUrl, { cache: 'no-store' });
+  if (!res.ok) {
+    throw new Error('Faled to fetch users');
+  }
 
   return res.json();
 }
 
 const Page = async (): Promise<ReactElement> => {
   const users = await getUsers();
-  return <Home users={users} />;
+
+  return (
+    <div>
+      <Home users={users} />
+    </div>
+  );
 };
 
 export default Page;

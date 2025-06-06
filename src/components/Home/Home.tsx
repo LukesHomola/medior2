@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
-import MainText from "@/components/MainText/MainText";
-import UserList from "../UserList/UserList";
+import { ReactElement } from 'react';
+import MainText from '@/components/MainText/MainText';
+import UserList from '../UserList/UserList';
 
-interface User {
+interface IUser {
   id: number;
   name: string;
   username: string;
@@ -26,13 +26,13 @@ interface User {
   };
 }
 
-interface Props {
-  users: User[];
+interface IProps {
+  users: IUser[];
 }
 
-const Home = ({ users }: Props): ReactElement => (
+const Home = ({ users }: IProps): ReactElement => (
   <>
-    {" "}
+    {' '}
     <MainText />
     <UserList users={users} />
   </>

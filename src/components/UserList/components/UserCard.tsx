@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
-import styles from "./UserCard.module.scss";
+import { ReactElement } from 'react';
+import styles from './UserCard.module.scss';
 
-interface User {
+interface IUser {
   id: number;
   name: string;
   username: string;
@@ -25,7 +25,7 @@ interface User {
   };
 }
 
-const UserCard = ({ user }: { user: User }): ReactElement => {
+const UserCard = ({ user }: { user: IUser }): ReactElement => {
   const mapLink = `https://mapy.cz/turisticka?source=coor&id=${user.address.geo.lng}%2C${user.address.geo.lat}&x=${user.address.geo.lng}&y=${user.address.geo.lat}&z=16`;
 
   return (

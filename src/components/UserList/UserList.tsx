@@ -1,9 +1,9 @@
-"use client";
-import { ReactElement } from "react";
-import UserCard from "./components/UserCard";
-import styles from "./UserList.module.scss";
+'use client';
+import { ReactElement } from 'react';
+import UserCard from './components/UserCard';
+import styles from './UserList.module.scss';
 
-interface User {
+interface IUser {
   id: number;
   name: string;
   username: string;
@@ -27,11 +27,11 @@ interface User {
   };
 }
 
-interface Props {
-  users: User[];
+interface IProps {
+  users: IUser[];
 }
 
-const UserList = ({ users }: Props): ReactElement => {
+const UserList = ({ users }: IProps): ReactElement => {
   return (
     <div>
       <h2 className={styles.title}>Users</h2>
